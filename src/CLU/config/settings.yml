@@ -1,0 +1,144 @@
+---
+intents:
+  - Representative
+  - BenefitInquiry
+  - ClaimInquiry
+  - EligibilityInquiry
+  - Manage
+  - None
+  - Farewell
+entities:
+  Amount:
+    name: Amount
+    compositionSetting: combineComponents
+    prebuilts: 
+      - Quantity.Currency
+  datetimeV2:
+    name: datetimeV2
+    compositionSetting: combineComponents
+    prebuilts: 
+      - DateTime
+    requiredComponents:
+      - prebuilts
+  Number:
+    name: Number
+    compositionSetting: combineComponents
+    requiredComponents:
+      - regex
+    regex:
+      - AccountNumber: "[0-9]{4}"
+  BenefitType:
+    name: BenefitType
+    compositionSetting: combineComponents
+    list:
+      - key: Yellow Ribbon
+        synonyms:
+          - yellow ribbon
+          - yellow ribbon program
+      - key: Work Study
+        synonyms:
+          - work study
+          - work study program
+          - work study assignment
+          - work study support
+          - work study opportunity
+          - work study contract
+          - work-study
+          - work-study program
+          - work-study assignment
+          - work-study support
+          - work-study opportunity
+          - work-study contract
+      - key: Vision
+        synonyms:
+          - vision
+          - eye exam
+          - eye care
+          - blind care
+          - eye treatment
+          - vision care
+          - low vision
+      - key: Health
+        synonyms:
+          - health
+          - health care
+          - medical
+          - medical coverage
+          - health coverage
+      - key: GI Bill
+        synonyms:
+            - gi bill
+            - education
+            - school
+            - college
+            - tuition
+            - classess
+            - bachelors
+            - bachelor
+            - bachelors degree
+            - bachelor degree
+            - mgib
+            - masters
+            - master
+            - masters degree
+            - master degree
+  AccountType:
+    name: AccountType
+    compositionSetting: combineComponents
+    list:
+      - key: Check
+        synonyms:
+          - check
+          - checks
+      - key: CreditCard
+        synonyms:
+          - CreditCard
+          - credit card
+          - card
+      - key: SavingsAccount
+        synonyms:
+          - savingsaccount
+          - savings account
+          - saving account
+          - savings
+      - key: Loan
+        synonyms:
+          - loan
+          - home loan
+          - car loan
+          - auto loan
+      - key: DebitCard
+        synonyms:
+          - debitcard
+          - debit card
+      - key: CheckingAccount
+        synonyms:
+          - checkingaccount
+          - checking account
+          - checking
+  TransactionType:
+    name: TransactionType
+    compositionSetting: combineComponents
+    list:
+      - key: Withdrawal
+        synonyms:
+          - withdrawal
+          - withdraw
+          - withdrawing
+          - withdrawn
+          - take out
+          - withdrawals
+      - key: Deposit
+        synonyms:
+          - deposit
+          - deposits
+          - put
+      - key: Check
+        synonyms:
+          - check
+          - checks
+      - key: Change
+        synonyms:
+          - change
+          - replace
+...
